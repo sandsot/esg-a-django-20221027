@@ -11,14 +11,14 @@ def index(request) :
         }
     )
 
-def memory_detail  (request, pk):
+def memory_detail(request, pk):
     post = Memory.objects.get(pk=pk)
     
     return render(
         request,
         'diary/memory_detail.html',
         {
-            'post':post,
+        'post':post,
         }
     )   
 
@@ -27,12 +27,12 @@ from diary.forms import DiaryForm
 
 def diary_new(request):
 
-    if request.method == "GET" :
+    if request.method == "GET":
         form = DiaryForm()
     else :
         form = DiaryForm(request.POST)
         if form.is_valid() :
-            post = form.save() # ModelForm에서 지원
+            post = form.save()
             return redirect(post)
         
     return render(request, "diary/diary_form.html", {
