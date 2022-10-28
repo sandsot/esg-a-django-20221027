@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Memory
+from diary.models import Memory
 
 admin.site.register(Memory)
 

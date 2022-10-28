@@ -3,11 +3,11 @@ from diary.models import Memory
 from django.views.generic import CreateView
 from diary.forms import DiaryForm
 
-def index(request) :
+def memory_list(request) :
     posts = Memory.objects.all().order_by('-pk')
     return render(
         request,
-        'diary/index.html',
+        'diary/memory_list.html',
         {
             'posts' : posts,
         }
@@ -26,7 +26,7 @@ def memory_detail(request, pk):
 
 
 
-def diary_new(request):
+def memory_new(request):
 
     if request.method == "GET":
         form = DiaryForm()
@@ -36,6 +36,6 @@ def diary_new(request):
             post = form.save()
             return redirect(post)
         
-    return render(request, "diary/diary_form.html", {
+    return render(request, "diary/memory_new.html", {
         "form" : form,
     })

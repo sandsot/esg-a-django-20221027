@@ -6,3 +6,4 @@ class DiaryForm(forms.ModelForm):
     class Meta:
         model = Memory
         fields = "__all__"
+        # fields = ["title",????]
