@@ -5,14 +5,13 @@
     <title>Diary</title>
 </head>
 <body>
-    <h3>Diary</h3>
+    <h2>Diary</h2>
 
 {% for diary in posts %}
     <hr/>
     <h1><a href="{{ diary.get_absolute_url }}">
         {{ diary.title }}</a></h1>
     <h5>{{ diary.created_at }}</h5>
-    <h5>{{ diary.updated_at }}</h5>
     <h2><p>{{ diary.message }}</p></h2>
 
 {% endfor %}

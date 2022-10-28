@@ -1,5 +1,7 @@
 from django.shortcuts import render, redirect
 from diary.models import Memory
+from django.views.generic import CreateView
+from diary.forms import DiaryForm
 
 def index(request) :
     posts = Memory.objects.all().order_by('-pk')
@@ -22,8 +24,7 @@ def memory_detail(request, pk):
         }
     )   
 
-from django.views.generic import CreateView
-from diary.forms import DiaryForm
+
 
 def diary_new(request):
 
